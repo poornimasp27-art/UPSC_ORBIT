@@ -23,16 +23,15 @@ header {
     background: linear-gradient(135deg, #14213d, #1d3557);
     color: white;
     text-align: center;
-    padding: 45px 20px;
+    padding: 40px 15px;
 }
 
 header h1 {
-    font-size: 38px;
+    font-size: 36px;
     margin: 0;
 }
 
 header p {
-    font-size: 18px;
     color: #dbeafe;
 }
 
@@ -41,8 +40,8 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
-    padding: 15px;
+    gap: 5px;
+    padding: 12px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -51,9 +50,10 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 12px 16px;
+    padding: 11px 13px;
     border-radius: 8px;
     font-weight: bold;
+    font-size: 14px;
 }
 
 nav a:hover {
@@ -63,21 +63,20 @@ nav a:hover {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 25px 15px;
+    padding: 20px 15px;
 }
 
 section {
     background: white;
-    padding: 30px;
-    margin: 25px 0;
+    padding: 25px;
+    margin: 22px 0;
     border-radius: 18px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    scroll-margin-top: 90px;
+    scroll-margin-top: 100px;
 }
 
 h2 {
     color: #14213d;
-    font-size: 28px;
 }
 
 h3 {
@@ -87,33 +86,9 @@ h3 {
 .card {
     background: #f8fafc;
     border-left: 5px solid #457b9d;
-    padding: 20px;
+    padding: 18px;
     margin: 15px 0;
     border-radius: 10px;
-}
-
-button {
-    background: #1d3557;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #457b9d;
-}
-
-.answer {
-    display: none;
-    background: #ecfdf5;
-    padding: 15px;
-    margin-top: 12px;
-    border-radius: 8px;
-    color: #166534;
 }
 
 .resource-link {
@@ -130,6 +105,106 @@ button:hover {
     background: #dbeafe;
 }
 
+/* STUDY TRACKER */
+
+.tracker {
+    background: linear-gradient(135deg, #14213d, #1d3557);
+    color: white;
+}
+
+.tracker h2,
+.tracker h3 {
+    color: white;
+}
+
+.tracker-date {
+    color: #dbeafe;
+    font-size: 15px;
+}
+
+.progress-container {
+    background: #334155;
+    height: 18px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    background: #4ade80;
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.progress-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.study-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f8fafc;
+    color: #1e293b;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.study-item input {
+    width: 22px;
+    height: 22px;
+    accent-color: #16a34a;
+    flex-shrink: 0;
+}
+
+.study-item label {
+    flex: 1;
+    font-weight: bold;
+}
+
+.target-box {
+    margin: 20px 0;
+}
+
+.target-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.target-box input {
+    padding: 12px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+}
+
+.tracker button {
+    background: #4ade80;
+    color: #14213d;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px 5px 8px 0;
+}
+
+.tracker button:hover {
+    background: #86efac;
+}
+
+#targetStatus {
+    color: #bbf7d0;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
 footer {
     text-align: center;
     padding: 25px;
@@ -142,21 +217,13 @@ footer {
         font-size: 30px;
     }
 
-    nav {
-        gap: 4px;
-    }
-
     nav a {
+        font-size: 13px;
         padding: 10px;
-        font-size: 14px;
     }
 
     section {
-        padding: 22px;
-    }
-
-    h2 {
-        font-size: 24px;
+        padding: 20px;
     }
 }
 </style>
@@ -175,6 +242,7 @@ footer {
     <a href="#current-affairs">Current Affairs</a>
     <a href="#prelims">Prelims</a>
     <a href="#mains">Mains</a>
+    <a href="#tracker">Study Tracker</a>
     <a href="#resources">Resources</a>
 </nav>
 
@@ -182,69 +250,74 @@ footer {
 
 <section id="welcome">
     <h2>Welcome to UPSC ORBIT</h2>
-    <p>
-        Your free learning platform for UPSC Civil Services
-        Examination 2028.
-    </p>
-    <p>
-        Build strong fundamentals, practice daily,
-        and move closer to your IAS dream.
-    </p>
+    <p>Your personal learning platform for UPSC Civil Services Examination.</p>
+    <p>Build strong fundamentals. Practice daily. Revise consistently.</p>
+
+    <div class="card">
+        <h3>Your Mission</h3>
+        <p>Become a disciplined and knowledgeable UPSC aspirant through
+        consistent preparation and smart revision.</p>
+    </div>
 </section>
+
+<!-- CURRENT AFFAIRS -->
 
 <section id="current-affairs">
     <h2>📰 Daily Current Affairs</h2>
-    <p>Understand important national and international developments
-    from a UPSC perspective.</p>
 
     <div class="card">
         <h3>Daily News Analysis</h3>
-        <p>Focus on important issues from The Hindu, PIB,
-        government reports, and other reliable sources.</p>
+        <p>Read important national and international news
+        from a UPSC perspective.</p>
+
         <a class="resource-link"
            href="https://www.pib.gov.in/"
-           target="_blank">Visit Press Information Bureau</a>
+           target="_blank">
+           Visit Press Information Bureau
+        </a>
+
+        <a class="resource-link"
+           href="https://www.thehindu.com/"
+           target="_blank">
+           Read The Hindu
+        </a>
     </div>
 
     <div class="card">
-        <h3>Current Affairs Study Approach</h3>
+        <h3>How to Analyze News</h3>
         <ul>
-            <li>Identify the background of the issue.</li>
-            <li>Understand its constitutional and economic relevance.</li>
-            <li>Connect the issue with the UPSC syllabus.</li>
-            <li>Prepare Prelims facts and Mains perspectives.</li>
+            <li>Understand the background.</li>
+            <li>Connect the issue with the syllabus.</li>
+            <li>Identify important facts for Prelims.</li>
+            <li>Prepare analytical points for Mains.</li>
         </ul>
     </div>
 </section>
 
+<!-- PRELIMS -->
+
 <section id="prelims">
     <h2>🎯 UPSC Prelims Practice</h2>
-    <p>Practice multiple-choice questions and strengthen
-    your conceptual understanding.</p>
 
     <div class="card">
-        <h3>Sample Question - Indian Polity</h3>
+        <h3>Sample MCQ - Polity</h3>
+
         <p><strong>Which part of the Indian Constitution
-        contains the Fundamental Rights?</strong></p>
+        contains Fundamental Rights?</strong></p>
 
         <p>A. Part II</p>
         <p>B. Part III</p>
         <p>C. Part IV</p>
         <p>D. Part V</p>
 
-        <button onclick="toggleAnswer('answer1')">
+        <button onclick="showAnswer()">
             Show Answer
         </button>
 
-        <div id="answer1" class="answer">
-            <strong>Correct Answer: B. Part III</strong>
-            <p>
-            Explanation: Articles 12 to 35 of the Indian
-            Constitution deal with Fundamental Rights.
-            </p>
-            <p>
-            UPSC Trick: Fundamental Rights = Part III.
-            </p>
+        <div id="mcqAnswer" style="display:none;">
+            <p><strong>Correct Answer: B. Part III</strong></p>
+            <p>Articles 12 to 35 deal with Fundamental Rights.</p>
+            <p><strong>UPSC Trick:</strong> Fundamental Rights = Part III.</p>
         </div>
     </div>
 
@@ -259,36 +332,120 @@ footer {
     </div>
 </section>
 
+<!-- MAINS -->
+
 <section id="mains">
     <h2>✍️ UPSC Mains Preparation</h2>
-    <p>Develop analytical thinking and answer-writing skills
-    for the General Studies papers.</p>
 
     <div class="card">
-        <h3>General Studies</h3>
+        <h3>General Studies Papers</h3>
         <ul>
-            <li>GS Paper I - History, Geography, Society</li>
-            <li>GS Paper II - Polity, Governance, International Relations</li>
-            <li>GS Paper III - Economy, Science, Environment, Security</li>
-            <li>GS Paper IV - Ethics, Integrity, Aptitude</li>
+            <li>GS I - History, Geography, Society</li>
+            <li>GS II - Polity, Governance, International Relations</li>
+            <li>GS III - Economy, Science, Environment, Security</li>
+            <li>GS IV - Ethics, Integrity, Aptitude</li>
         </ul>
     </div>
 
     <div class="card">
         <h3>Daily Answer Writing</h3>
-        <p>
-        Practice introductions, structured body paragraphs,
-        relevant examples, and balanced conclusions.
-        </p>
-        <p><strong>Daily Target:</strong> Write one answer
-        and evaluate your structure.
-        </p>
+        <p>Practice structured introductions, analytical body paragraphs,
+        relevant examples, and balanced conclusions.</p>
+        <p><strong>Daily Target:</strong> Write one answer.</p>
     </div>
 </section>
 
+<!-- DAILY STUDY TRACKER -->
+
+<section id="tracker" class="tracker">
+
+    <h2>📊 Daily UPSC Study Tracker</h2>
+
+    <p class="tracker-date">
+        Today's Preparation Dashboard
+    </p>
+
+    <p>
+        Complete your daily study tasks and track your progress.
+    </p>
+
+    <div class="progress-text">
+        <span id="progressPercent">0%</span>
+        Completed
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <p id="completedText">0 out of 7 tasks completed</p>
+
+    <div class="target-box">
+        <label for="studyHours">
+            🎯 Daily Study Hours Target
+        </label>
+
+        <input
+            type="number"
+            id="studyHours"
+            min="1"
+            max="24"
+            value="6"
+            onchange="saveTarget()"
+        >
+    </div>
+
+    <h3>Daily Study Checklist</h3>
+
+    <div class="study-item">
+        <input type="checkbox" id="history">
+        <label for="history">📜 History Study</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="polity">
+        <label for="polity">🏛️ Indian Polity</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="geography">
+        <label for="geography">🌍 Geography</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="economy">
+        <label for="economy">💰 Economy</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="current">
+        <label for="current">📰 Current Affairs</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="mcq">
+        <label for="mcq">🎯 Prelims MCQ Practice</label>
+    </div>
+
+    <div class="study-item">
+        <input type="checkbox" id="revision">
+        <label for="revision">🔁 Daily Revision</label>
+    </div>
+
+    <p id="targetStatus">
+        Keep going! Every completed task matters.
+    </p>
+
+    <button onclick="resetTracker()">
+        Reset Today's Tracker
+    </button>
+
+</section>
+
+<!-- RESOURCES -->
+
 <section id="resources">
     <h2>📚 Study Resources</h2>
-    <p>Access important official websites and study materials.</p>
 
     <a class="resource-link"
        href="https://www.ncert.nic.in/"
@@ -314,21 +471,8 @@ footer {
             <li>Indian Polity - M. Laxmikanth</li>
             <li>Modern History - Spectrum</li>
             <li>Geography - NCERT Textbooks</li>
-            <li>Economy - Basic NCERTs and standard materials</li>
+            <li>Economy - NCERT and standard materials</li>
         </ul>
-    </div>
-</section>
-
-<section id="motivation">
-    <h2>🌟 Your UPSC Journey</h2>
-    <div class="card">
-        <h3>Consistency Beats Perfection</h3>
-        <p>
-        Every page you read, every question you solve,
-        and every revision you complete takes you one
-        step closer to your dream.
-        </p>
-        <p><strong>Believe in yourself. Keep moving forward.</strong></p>
     </div>
 </section>
 
@@ -341,15 +485,161 @@ footer {
 </footer>
 
 <script>
-function toggleAnswer(id) {
-    const answer = document.getElementById(id);
 
-    if (answer.style.display === "block") {
-        answer.style.display = "none";
+const taskIds = [
+    "history",
+    "polity",
+    "geography",
+    "economy",
+    "current",
+    "mcq",
+    "revision"
+];
+
+const today = new Date().toLocaleDateString("en-CA");
+
+const storageKey = "upsc-orbit-tracker-" + today;
+
+const targetKey = "upsc-orbit-target-" + today;
+
+function loadTracker() {
+
+    const saved = localStorage.getItem(storageKey);
+
+    if (saved) {
+        const data = JSON.parse(saved);
+
+        taskIds.forEach(id => {
+            document.getElementById(id).checked =
+                Boolean(data[id]);
+        });
+    }
+
+    const savedTarget = localStorage.getItem(targetKey);
+
+    if (savedTarget) {
+        document.getElementById("studyHours").value =
+            savedTarget;
+    }
+
+    updateProgress();
+}
+
+function saveTracker() {
+
+    const data = {};
+
+    taskIds.forEach(id => {
+        data[id] = document.getElementById(id).checked;
+    });
+
+    localStorage.setItem(storageKey, JSON.stringify(data));
+
+    updateProgress();
+}
+
+function saveTarget() {
+
+    const target = document.getElementById("studyHours").value;
+
+    if (target >= 1 && target <= 24) {
+
+        localStorage.setItem(targetKey, target);
+
+        updateProgress();
+
     } else {
-        answer.style.display = "block";
+
+        alert("Please enter a target between 1 and 24 hours.");
+
+        document.getElementById("studyHours").value = 6;
     }
 }
+
+function updateProgress() {
+
+    let completed = 0;
+
+    taskIds.forEach(id => {
+
+        if (document.getElementById(id).checked) {
+            completed++;
+        }
+
+    });
+
+    const percentage =
+        Math.round((completed / taskIds.length) * 100);
+
+    document.getElementById("progressPercent").textContent =
+        percentage + "%";
+
+    document.getElementById("progressBar").style.width =
+        percentage + "%";
+
+    document.getElementById("completedText").textContent =
+        completed + " out of " + taskIds.length +
+        " tasks completed";
+
+    if (percentage === 100) {
+
+        document.getElementById("targetStatus").textContent =
+            "🎉 Amazing! You completed all today's study tasks!";
+
+    } else if (percentage >= 50) {
+
+        document.getElementById("targetStatus").textContent =
+            "🔥 Great progress! Keep pushing forward!";
+
+    } else {
+
+        document.getElementById("targetStatus").textContent =
+            "Keep going! Every completed task matters.";
+    }
+}
+
+function resetTracker() {
+
+    const confirmReset =
+        confirm("Are you sure you want to reset today's tracker?");
+
+    if (confirmReset) {
+
+        taskIds.forEach(id => {
+            document.getElementById(id).checked = false;
+        });
+
+        localStorage.removeItem(storageKey);
+
+        updateProgress();
+    }
+}
+
+function showAnswer() {
+
+    const answer = document.getElementById("mcqAnswer");
+
+    if (answer.style.display === "none") {
+
+        answer.style.display = "block";
+
+    } else {
+
+        answer.style.display = "none";
+    }
+}
+
+taskIds.forEach(id => {
+
+    document.getElementById(id).addEventListener(
+        "change",
+        saveTracker
+    );
+
+});
+
+loadTracker();
+
 </script>
 
 </body>
