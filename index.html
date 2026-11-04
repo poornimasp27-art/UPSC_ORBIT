@@ -1,128 +1,356 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPSC ORBIT | CSE 2028</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSC ORBIT | CSE 2028</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6fa;
-            margin: 0;
-            color: #222;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        header {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+    color: #1e293b;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
+header {
+    background: linear-gradient(135deg, #14213d, #1d3557);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
 
-        header p {
-            color: #dbeafe;
-        }
+header h1 {
+    font-size: 38px;
+    margin: 0;
+}
 
-        nav {
-            background: #1f3a5f;
-            padding: 15px;
-            text-align: center;
-        }
+header p {
+    font-size: 18px;
+    color: #dbeafe;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-        }
+nav {
+    background: #1d3557;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px #ddd;
-        }
+nav a:hover {
+    background: #457b9d;
+}
 
-        h2 {
-            color: #14213d;
-        }
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
 
-        footer {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+section {
+    background: white;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    scroll-margin-top: 90px;
+}
+
+h2 {
+    color: #14213d;
+    font-size: 28px;
+}
+
+h3 {
+    color: #1d3557;
+}
+
+.card {
+    background: #f8fafc;
+    border-left: 5px solid #457b9d;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+button {
+    background: #1d3557;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #457b9d;
+}
+
+.answer {
+    display: none;
+    background: #ecfdf5;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 8px;
+    color: #166534;
+}
+
+.resource-link {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    background: #f8fafc;
+    border-radius: 8px;
+    color: #1d3557;
+    text-decoration: none;
+}
+
+.resource-link:hover {
+    background: #dbeafe;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #14213d;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<header id="home">
     <h1>UPSC ORBIT</h1>
     <p>Your Journey to UPSC CSE 2028 Starts Here</p>
+    <p>Learn • Practice • Revise • Achieve</p>
 </header>
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#current">Current Affairs</a>
+    <a href="#current-affairs">Current Affairs</a>
     <a href="#prelims">Prelims</a>
     <a href="#mains">Mains</a>
     <a href="#resources">Resources</a>
 </nav>
 
-<div class="container" id="home">
+<div class="container">
+
+<section id="welcome">
+    <h2>Welcome to UPSC ORBIT</h2>
+    <p>
+        Your free learning platform for UPSC Civil Services
+        Examination 2028.
+    </p>
+    <p>
+        Build strong fundamentals, practice daily,
+        and move closer to your IAS dream.
+    </p>
+</section>
+
+<section id="current-affairs">
+    <h2>📰 Daily Current Affairs</h2>
+    <p>Understand important national and international developments
+    from a UPSC perspective.</p>
 
     <div class="card">
-        <h2>Welcome to UPSC ORBIT</h2>
+        <h3>Daily News Analysis</h3>
+        <p>Focus on important issues from The Hindu, PIB,
+        government reports, and other reliable sources.</p>
+        <a class="resource-link"
+           href="https://www.pib.gov.in/"
+           target="_blank">Visit Press Information Bureau</a>
+    </div>
+
+    <div class="card">
+        <h3>Current Affairs Study Approach</h3>
+        <ul>
+            <li>Identify the background of the issue.</li>
+            <li>Understand its constitutional and economic relevance.</li>
+            <li>Connect the issue with the UPSC syllabus.</li>
+            <li>Prepare Prelims facts and Mains perspectives.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="prelims">
+    <h2>🎯 UPSC Prelims Practice</h2>
+    <p>Practice multiple-choice questions and strengthen
+    your conceptual understanding.</p>
+
+    <div class="card">
+        <h3>Sample Question - Indian Polity</h3>
+        <p><strong>Which part of the Indian Constitution
+        contains the Fundamental Rights?</strong></p>
+
+        <p>A. Part II</p>
+        <p>B. Part III</p>
+        <p>C. Part IV</p>
+        <p>D. Part V</p>
+
+        <button onclick="toggleAnswer('answer1')">
+            Show Answer
+        </button>
+
+        <div id="answer1" class="answer">
+            <strong>Correct Answer: B. Part III</strong>
+            <p>
+            Explanation: Articles 12 to 35 of the Indian
+            Constitution deal with Fundamental Rights.
+            </p>
+            <p>
+            UPSC Trick: Fundamental Rights = Part III.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Prelims Preparation Strategy</h3>
+        <ul>
+            <li>Practice topic-wise MCQs.</li>
+            <li>Revise previous year questions.</li>
+            <li>Maintain an error notebook.</li>
+            <li>Practice elimination techniques.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="mains">
+    <h2>✍️ UPSC Mains Preparation</h2>
+    <p>Develop analytical thinking and answer-writing skills
+    for the General Studies papers.</p>
+
+    <div class="card">
+        <h3>General Studies</h3>
+        <ul>
+            <li>GS Paper I - History, Geography, Society</li>
+            <li>GS Paper II - Polity, Governance, International Relations</li>
+            <li>GS Paper III - Economy, Science, Environment, Security</li>
+            <li>GS Paper IV - Ethics, Integrity, Aptitude</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Daily Answer Writing</h3>
         <p>
-            Your free learning platform for UPSC Civil Services
-            Examination 2028.
+        Practice introductions, structured body paragraphs,
+        relevant examples, and balanced conclusions.
         </p>
+        <p><strong>Daily Target:</strong> Write one answer
+        and evaluate your structure.
+        </p>
+    </div>
+</section>
+
+<section id="resources">
+    <h2>📚 Study Resources</h2>
+    <p>Access important official websites and study materials.</p>
+
+    <a class="resource-link"
+       href="https://www.ncert.nic.in/"
+       target="_blank">
+       📖 NCERT Textbooks
+    </a>
+
+    <a class="resource-link"
+       href="https://upsc.gov.in/"
+       target="_blank">
+       🏛️ Official UPSC Website
+    </a>
+
+    <a class="resource-link"
+       href="https://www.pib.gov.in/"
+       target="_blank">
+       📰 Press Information Bureau
+    </a>
+
+    <div class="card">
+        <h3>Standard Books</h3>
+        <ul>
+            <li>Indian Polity - M. Laxmikanth</li>
+            <li>Modern History - Spectrum</li>
+            <li>Geography - NCERT Textbooks</li>
+            <li>Economy - Basic NCERTs and standard materials</li>
+        </ul>
+    </div>
+</section>
+
+<section id="motivation">
+    <h2>🌟 Your UPSC Journey</h2>
+    <div class="card">
+        <h3>Consistency Beats Perfection</h3>
         <p>
-            Learn daily. Practice consistently.
-            Achieve your UPSC dream.
+        Every page you read, every question you solve,
+        and every revision you complete takes you one
+        step closer to your dream.
         </p>
+        <p><strong>Believe in yourself. Keep moving forward.</strong></p>
     </div>
-
-    <div class="card" id="current">
-        <h2>Daily Current Affairs</h2>
-        <p>Daily Hindu and PIB news analysis for UPSC aspirants.</p>
-    </div>
-
-    <div class="card" id="prelims">
-        <h2>Prelims Preparation</h2>
-        <p>Practice MCQs, revise concepts, and improve accuracy.</p>
-    </div>
-
-    <div class="card" id="mains">
-        <h2>Mains Preparation</h2>
-        <p>GS answer writing, important topics, and analysis.</p>
-    </div>
-
-    <div class="card" id="resources">
-        <h2>Study Resources</h2>
-        <p>NCERT notes, revision materials, and study plans.</p>
-    </div>
+</section>
 
 </div>
 
 <footer>
-    <p>UPSC ORBIT | CSE 2028</p>
-    <p>Learn • Practice • Succeed</p>
+    <h3>UPSC ORBIT</h3>
+    <p>Your Dream. Your Discipline. Your Destination.</p>
+    <p>UPSC CSE 2028 Preparation Platform</p>
 </footer>
+
+<script>
+function toggleAnswer(id) {
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
